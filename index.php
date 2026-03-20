@@ -21,4 +21,26 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 echo "Connected successfully";
+
+/* 
+Creamos la conexión usando la clase mysqli:
+- new mysqli() crea una nueva conexión a MySQL
+- Se pasan los datos necesarios para conectarse
+*/
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+/* 
+Verificamos si la conexión falló:
+- connect_error detecta errores
+- die() detiene el programa y muestra el error
+*/
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
+}
+
+/* 
+Si todo sale bien, mostramos mensaje de éxito
+*/
+echo "Conexión exitosa a la base de datos";
+
 ?>
