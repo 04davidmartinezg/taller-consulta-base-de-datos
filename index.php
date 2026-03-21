@@ -15,14 +15,21 @@ $dbname = "taller_consulta"; //aqui colocamos el nombre de nuestra base de datos
 /* Se crea la variable $conn con la que haremos la conexion a la base de datos y aqui guardaremos lo que asignamos, se coloca el new indicando que estamos creando una nueva instancia,
 la palabra mysql es la clase la cual sabe hablar con las bases de datos de MySQL y se agregan las 4 variables en el mismo orden que fueron definidas*/
 $conn = new mysqli($servername, $username, $password, $dbname);
-
-/* con esta linea de codigo verificamos si la conexion falla*/
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error); /* en dado caso de fallar el programa se detiene de indemdiato, haciendo que lo
+/* 
+Verificamos si la conexión falló:
+- connect_error detecta errores
+- en dado caso de fallar el programa se detiene de indemdiato, haciendo que lo
   que este debajo de la esta linea no se ejecute, de esto se hace cargo el die*/
+if ($conn->connect_error) {
+    die("Error de conexión: " . $conn->connect_error);
 }
-echo "Connected successfully";/*Si todo sale bien, mostramos mensaje de éxito*/
+
+/* 
+Si todo sale bien, mostramos mensaje de éxito
+*/
+echo "Conexión exitosa a la base de datos";
 
 $conn->close(); /* la conexion se cierra cuando el script se termina pero para hacerlo antes o de forma manual para asegurarnos escribimos este codigo*/
 
 ?>
+
