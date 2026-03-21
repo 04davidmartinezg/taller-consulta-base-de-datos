@@ -44,3 +44,4 @@ Si todo sale bien, mostramos mensaje de éxito
 echo "Conexión exitosa a la base de datos";
 
 ?>
+
